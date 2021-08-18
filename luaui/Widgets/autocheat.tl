@@ -1,6 +1,6 @@
 if string.find(string.upper(Game.gameVersion), "$VERSION", nil, true) then
 
-	function widget:GetInfo()
+	function widget:GetInfo(): WidgetInfo
 		return {
 			name      = "Auto cheat",
 			desc      = "Enables cheats for $VERSION game versions",
@@ -23,7 +23,7 @@ if string.find(string.upper(Game.gameVersion), "$VERSION", nil, true) then
 		end
 	end
 
-	function widget:GameFrame(f)
+	function widget:GameFrame(f: number)
 		if f > gf then
 			Spring.SendCommands("say !cheats")
 			Spring.SendCommands("say !hostsay /globallos")

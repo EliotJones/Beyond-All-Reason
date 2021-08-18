@@ -1,4 +1,4 @@
-function widget:GetInfo()
+function widget:GetInfo(): WidgetInfo
 	return {
 		name = "CameraFlip",
 		desc = "Press ctrl+shift+o to flip the camera \n(with overhead or smooth cam)",
@@ -12,7 +12,7 @@ end
 
 local o = 111 -- 'o' key
 
-function widget:KeyPress(key,mods,isRepeat)
+function widget:KeyPress(key:integer,mods: KeyboardModifiers,isRepeat: boolean): any
 	--Spring.Echo(key)
 	if key ~= o then return end
 	if isRepeat then return end
